@@ -1,4 +1,5 @@
 import React from "react";
+import classNames from "classnames";
 
 function SortPopup({ items }) {
   const [visiblePopup, setVisiblePopup] = React.useState(false);
@@ -28,7 +29,9 @@ function SortPopup({ items }) {
     <div ref={sortRef} className="sort">
       <div className="sort__label">
         <svg
-          className={visiblePopup && "rotate"}
+          className={classNames({
+            rotate: visiblePopup,
+          })}
           width="10"
           height="6"
           viewBox="0 0 10 6"
